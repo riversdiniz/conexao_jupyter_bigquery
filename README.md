@@ -57,5 +57,35 @@ Continuar e Concluir.
 
 ![alt text](image-3.png)
 
-#### 6 - Depois de baixa a chave colocaremos dentro de uma pasta chamada Data dentro no nosso projeto.
+#### 6 - Depois de baixa a chave colocaremos dentro de uma pasta chamada Data dentro no nosso projeto ou em qualquer caminho.
 
+#### 7 - Exemplo de como é colocado a chave de acesso pelo Python Jupyter.
+
+* [*1. Conexão com autenticador Fisico.ipynb*]().
+Nesse primeiro projeto colocaremos o caminho da chave baixado no computador localmente.
+
+```
+#Especifique o caminho para o arquivo JSON de credenciais
+credencial = r"C:\Users\riverd\Downloads\xxxxxxxxxxxx.json"
+```
+
+* [*2. Conexão com Oauth2.ipynb*]().
+No segundo projeto colocaremos as seguintes informções do arquivo dentro do json que foi baixado.
+
+```
+#Especifique o caminho para o arquivo JSON de credenciais
+credencial = {
+  "type": "service_account",
+  "project_id": "PROJECT_ID",
+  "private_key_id": "KEY_ID",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nPRIVATE_KEY\n-----END PRIVATE KEY-----\n",
+  "client_email": "SERVICE_ACCOUNT_EMAIL",
+  "client_id": "CLIENT_ID",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/SERVICE_ACCOUNT_EMAIL"
+}
+```
+
+Feito esses passos acima as conexão com banco de dados do bigquery terá acesso normalmente. 
